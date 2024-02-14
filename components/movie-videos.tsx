@@ -3,6 +3,7 @@ import { URL } from "../app/(home)/page";
 async function getVideos(id: string) {
   console.log(`Fetching videos: ${Date.now()}`);
   await new Promise((resolve) => setTimeout(resolve, 5000));
+  // throw new Error("Failed to fetch videos");
   const response = await fetch(`${URL}/${id}/videos`);
   return response.json();
 }
